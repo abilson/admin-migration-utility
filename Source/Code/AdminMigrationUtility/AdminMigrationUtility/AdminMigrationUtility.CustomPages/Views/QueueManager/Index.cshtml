@@ -1,0 +1,208 @@
+﻿@model AdminMigrationUtility.CustomPages.Models.QueueRecordManager
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="container">
+
+	<!-------->
+	<div id="content">
+		<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+			<li class="active"><a href="#importManager" data-toggle="tab">Import Manager</a></li>
+			<li><a href="#importWorker" data-toggle="tab">Import Worker</a></li>
+			<li><a href="#exportManager" data-toggle="tab">Export Manager</a></li>
+			<li><a href="#exportWorker" data-toggle="tab">Export Worker</a></li>
+		</ul>
+		<div id="my-tab-content" class="tab-content">
+			<div class="tab-pane active" id="importManager">
+				<div>
+					<br />
+					<div class="panel panel-primary">
+						<div class="panel-body">
+							<br />
+							@if (Model.ImportManagerQueue.Any())
+			{
+								<div class="row">
+									<div class="col-md-12">
+										@{
+											var recordsGrid = new WebGrid(Model.ImportManagerQueue, canPage: false, canSort: false);
+											<div>
+												@recordsGrid.GetHtml("table",
+
+														fillEmptyRows: false,
+														headerStyle: "header",
+														footerStyle: "grid-footer",
+
+														columns: new[]
+														{
+																recordsGrid.Column("JobId", "Job ID"),
+																recordsGrid.Column("RecordId", "Queue Row Id"),
+																recordsGrid.Column("ObjectType", "Object Type"),
+																recordsGrid.Column("QueueStatus", "Queue Status"),
+																recordsGrid.Column("Priority", "Priority"),
+																recordsGrid.Column("AgentId", "Agent ID")
+														})
+											</div>
+										}
+									</div>
+								</div>
+											}
+											else
+											{
+												<div class="row">
+													<div class="col-md-12">
+														No records in the queue
+													</div>
+												</div>
+											}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane" id="importWorker">
+				<div>
+					<br />
+					<div class="panel panel-primary">
+						<div class="panel-body">
+							<br />
+							@if (Model.ImportWorkerQueue.Any())
+			{
+								<div class="row">
+									<div class="col-md-12">
+										@{
+											var recordsGrid = new WebGrid(Model.ImportWorkerQueue, canPage: false, canSort: false);
+											<div>
+												@recordsGrid.GetHtml("table",
+
+														fillEmptyRows: false,
+														headerStyle: "header",
+														footerStyle: "grid-footer",
+
+														columns: new[]
+														{
+																recordsGrid.Column("JobID", "Job ID"),
+																recordsGrid.Column("RecordID", "Queue Row Id"),
+																recordsGrid.Column("ObjectType", "Object Type"),
+																recordsGrid.Column("QueueStatus", "Queue Status"),
+																recordsGrid.Column("Priority", "Priority"),
+																recordsGrid.Column("AgentID", "Agent ID")
+														})
+											</div>
+										}
+									</div>
+								</div>
+											}
+											else
+											{
+												<div class="row">
+													<div class="col-md-12">
+														No records in the queue
+													</div>
+												</div>
+											}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane" id="exportManager">
+				<div>
+					<br />
+					<div class="panel panel-primary">
+						<div class="panel-body">
+							<br />
+							@if (Model.ExportManagerQueue.Any())
+			{
+								<div class="row">
+									<div class="col-md-12">
+										@{
+											var recordsGrid = new WebGrid(Model.ExportManagerQueue, canPage: false, canSort: false);
+											<div>
+												@recordsGrid.GetHtml("table",
+
+														fillEmptyRows: false,
+														headerStyle: "header",
+														footerStyle: "grid-footer",
+
+														columns: new[]
+														{
+																recordsGrid.Column("ExportJobArtifactId", "Job ID"),
+																recordsGrid.Column("TableRowId", "Queue Row Id"),
+																recordsGrid.Column("ObjectType", "Object Type"),
+																recordsGrid.Column("QueueStatus", "Queue Status"),
+																recordsGrid.Column("Priority", "Priority"),
+																recordsGrid.Column("AgentId", "Agent ID")
+														})
+											</div>
+										}
+									</div>
+								</div>
+											}
+											else
+											{
+												<div class="row">
+													<div class="col-md-12">
+														No records in the queue
+													</div>
+												</div>
+											}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane" id="exportWorker">
+				<div>
+					<br />
+					<div class="panel panel-primary">
+						<div class="panel-body">
+							<br />
+							@if (Model.ExportWorkerQueue.Any())
+			{
+								<div class="row">
+									<div class="col-md-12">
+										@{
+											var recordsGrid = new WebGrid(Model.ExportWorkerQueue, canPage: false, canSort: false);
+											<div>
+												@recordsGrid.GetHtml("table",
+
+														fillEmptyRows: false,
+														headerStyle: "header",
+														footerStyle: "grid-footer",
+
+														columns: new[]
+														{
+																recordsGrid.Column("ExportJobArtifactId", "Job ID"),
+																recordsGrid.Column("QueueRowId", "Queue Row Id"),
+																recordsGrid.Column("ObjectType", "Object Type"),
+																recordsGrid.Column("QueueStatus", "Queue Status"),
+																recordsGrid.Column("Priority", "Priority"),
+																recordsGrid.Column("AgentId", "Agent ID")
+														})
+											</div>
+										}
+									</div>
+								</div>
+											}
+											else
+											{
+												<div class="row">
+													<div class="col-md-12">
+														No records in the queue
+													</div>
+												</div>
+											}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $('#tabs').tab();
+    });
+	</script>
+</div> <!-- container -->

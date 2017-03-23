@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F4CDA45-EAF3-4B40-A7A9-F312B7664ABC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdminMigrationUtility.Helpers</RootNamespace>
+    <AssemblyName>AdminMigrationUtility.Helpers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="kCura.EventHandler">
+      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Event Handlers\Client\kCura.EventHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="kCura.Relativity.Client, Version=9.2.190.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Services API\Client\kCura.Relativity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Relativity.API, Version=9.2.190.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Relativity API\Lib\Relativity.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Relativity.Kepler, Version=1.0.1.163, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Services API\Client\Relativity.Kepler.dll</HintPath>
+    </Reference>
+    <Reference Include="Relativity.Services.DataContracts, Version=9.4.224.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Services API\Client\Relativity.Services.DataContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Relativity.Services.Interfaces">
+      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Services API\Client\Relativity.Services.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Relativity.Services.ServiceProxy">
+      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Services API\Client\Relativity.Services.ServiceProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Javascript.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Javascript.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExportWorkerResultsTableRecord.cs" />
+    <Compile Include="Models\ImportJobError.cs" />
+    <Compile Include="Models\SmtpClientSettings.cs" />
+    <Compile Include="QuerySubset.cs" />
+    <Compile Include="Rsapi\Interfaces\IRsapiRepositoryGroup.cs" />
+    <Compile Include="Rsapi\RSAPIiRepositoryGroup.cs" />
+    <Compile Include="Serialization\ISerializationHelper.cs" />
+    <Compile Include="Kepler\AuthenticationHelper.cs" />
+    <Compile Include="Constant.cs" />
+    <Compile Include="Exceptions\ExceptionMessageFormatter.cs" />
+    <Compile Include="Exceptions\AdminMigrationUtilityException.cs" />
+    <Compile Include="Exceptions\ObjectColumnDataConversionException.cs" />
+    <Compile Include="SQL\ISqlQueryHelper.cs" />
+    <Compile Include="Kepler\IAuthenticationHelper.cs" />
+    <Compile Include="Models\AdminObject\AdminObjectBase.cs" />
+    <Compile Include="Models\ExportManagerQueueRecord.cs" />
+    <Compile Include="Models\ExportWorkerQueueRecord.cs" />
+    <Compile Include="Models\Interfaces\IAdminObject.cs" />
+    <Compile Include="Models\Interfaces\IObjectColumn.cs" />
+    <Compile Include="Models\KeywordsNotesModel.cs" />
+    <Compile Include="Models\ImportManagerQueueRecord.cs" />
+    <Compile Include="Models\ObjectColumn.cs" />
+    <Compile Include="Models\AdminObject\UserAdminObject.cs" />
+    <Compile Include="Models\ImportWorkerQueueRecord.cs" />
+    <Compile Include="Serialization\SerializationHelper.cs" />
+    <Compile Include="SQL\SqlQueryHelper.cs" />
+    <Compile Include="Rsapi\ArtifactQueries.cs" />
+    <Compile Include="Rsapi\ErrorQueries.cs" />
+    <Compile Include="Rsapi\Interfaces\IArtifactQueries.cs" />
+    <Compile Include="Rsapi\MessageFormatter.cs" />
+    <Compile Include="Rsapi\Response.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="Validation\Interfaces\IValidation.cs" />
+    <Compile Include="Validation\ValidationCharacterLimit.cs" />
+    <Compile Include="Validation\ValidationClient.cs" />
+    <Compile Include="Validation\ValidationCodeName.cs" />
+    <Compile Include="Validation\ValidationGroup.cs" />
+    <Compile Include="Validation\ValidationNotNull.cs" />
+    <Compile Include="Validation\ValidationNumericRange.cs" />
+    <Compile Include="Validation\ValidationPasswordLoginMethod.cs" />
+    <Compile Include="Validation\ValidationRegEx.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Javascript.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Javascript.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

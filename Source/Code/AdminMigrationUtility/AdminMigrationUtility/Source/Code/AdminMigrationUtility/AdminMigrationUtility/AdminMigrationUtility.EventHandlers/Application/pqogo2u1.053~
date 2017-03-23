@@ -1,0 +1,77 @@
+﻿using System;
+using System.Threading.Tasks;
+using AdminMigrationUtility.Helpers;
+using AdminMigrationUtility.Helpers.Exceptions;
+using Relativity.API;
+
+namespace AdminMigrationUtility.EventHandlers.Application
+{
+	public class PostInstallJob
+	{
+		public int WorkspaceArtifactId { get; set; }
+		public IDBContext DbContextEdds { get; set; }
+		public ISqlQueryHelper SqlQueryHelper { get; set; }
+		public IAPILog Logger { get; set; }
+		public PostInstallJob(int workspaceArtifactId, IDBContext dbContextEdds, ISqlQueryHelper sqlQueryHelper, IAPILog logger)
+		{
+			WorkspaceArtifactId = workspaceArtifactId;
+			DbContextEdds = dbContextEdds;
+			SqlQueryHelper = sqlQueryHelper;
+			Logger = logger;
+		}
+
+		public kCura.EventHandler.Response Execute()
+		{
+			var response = new kCura.EventHandler.Response { Success = true, Message = string.Empty };
+
+			try
+			{
+				//Create the Export Utility Job Manager queue table if it doesn't already exist
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Creating Export Utility Job Manager queue table if it doesn't already exist");
+
+				Logger.LogDebug("The time is {Now}", DateTime.Now);
+				Logger.LogDebug("The time is {This}", this);
+				
+					SqlQueryHelper.CreateExportManagerQueueTableAsync(DbContextEdds).Wait();
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Created Export Utility Job Manager queue table if it doesn't already exist");
+
+				//Create the Export Utility Job Worker queue table if it doesn't already exist
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Creating Export Utility Job Worker queue table if it doesn't already exist");
+				SqlQueryHelper.CreateExportWorkerQueueTableAsync(DbContextEdds).Wait();
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Created Export Utility Job Worker queue table if it doesn't already exist");
+
+				//Create the Export Utility Job Error log table if it doesn't already exist
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Creating Export Utility Job Error Log table if it doesn't already exist");
+				SqlQueryHelper.CreateExportErrorLogTableAsync(DbContextEdds).Wait();
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Created Export Utility Job Error Log table if it doesn't already exist");
+
+				//Create the Import Utility Job Manager queue table if it doesn't already exist
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Creating Import Utility Job Manager queue table if it doesn't already exist");
+				SqlQueryHelper.CreateImportManagerQueueTableAsync(DbContextEdds).Wait();
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Created Import Utility Job Manager queue table if it doesn't already exist");
+
+				//Create the Import Utility Job Worker queue table if it doesn't already exist
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Creating Import Utility Job Worker queue table if it doesn't already exist");
+				SqlQueryHelper.CreateImportWorkerQueueTableAsync(DbContextEdds).Wait();
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Created Import Utility Job Worker queue table if it doesn't already exist");
+
+				//Create the Import Utility Job Error log table if it doesn't already exist
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Creating Import Utility Job Error Log table if it doesn't already exist");
+				SqlQueryHelper.CreateImportErrorLogTableAsync(DbContextEdds).Wait();
+				Logger.LogDebug($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Created Import Utility Job Error Log table if it doesn't already exist");
+				
+			}
+			catch (AdminMigrationUtilityException ex)
+			{
+				var message = ex.Message + " : " + (ex.InnerException?.Message ?? "None");
+				Logger.LogError($"{Constant.Names.ApplicationName} - [Workspace ArtifactID: {WorkspaceArtifactId}] Post-Install failed. {message}");
+
+				response.Success = false;
+				response.Message = $"Post-Install table creation(s) failed with message: {ex.Message}";
+				throw new AdminMigrationUtilityException(ex.Message);
+			}
+
+			return response;
+		}
+	}
+}

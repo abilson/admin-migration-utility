@@ -1,0 +1,31 @@
+Rules for columns: 
+
+•	MaximumPasswordAgeInDays  -   This value should be between 0 and 1000
+•	If column Two Factor Mode is set to ‘Always’ or ‘OutsideResistrectedIPs’, column TwoFactorInfo needs to have a valid email address
+•	If column Two Factor Mode is ‘None’,  column TwoFactorInfo does not need a valid email address
+LastName cannot be more than 50 characters
+FirstName cannot be more than 50 characters
+
+
+
+Workflow if user has a import file from RUIA version 18.1
+Add the following columns to make them compatible
+
+Default value for 
+ChangeDocumentViewer	FALSE
+Document Viewer	        DEFAULT
+
+
+Workflow if user has a import file from RUIA version 14.8
+1.	Change AuthenticationData to WindowsAccount
+2.	Remove the ‘Password’ column
+3.	change  ‘ChangePassword’ to CanChangePassword
+4.	Change ‘MaximumPasswordAge’ to ‘MaximumPasswordAgeInDays’ 
+5.	Remove DataFocus column
+6.	Add the following columnes
+
+‘ChangeDocumentViewer’ - Set this to 'FALSE' OR TRUE
+‘DocumentViewer’ - Set this to Default, HTML Or ActiveX
+‘UserMustChangePasswordOnNextLogin’, Set to FALSE if you dont want the user to change password when they login
+‘TwoFactorMode’, Set to None, Always or OutsideResistrectedIPs
+‘TwoFactorInfo’  If 'TwoFactorMode' is set to Always or OutsideResistrectedIPs, add a valid email address for 'TwoFactorInfo'

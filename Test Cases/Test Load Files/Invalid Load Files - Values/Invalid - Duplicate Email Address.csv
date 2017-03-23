@@ -1,0 +1,5 @@
+FirstName,LastName,EmailAddress,Keywords,Notes,Groups,Type,Client,RelativityAccess,DocumentSkip,BetaUser,ChangeSettings,KeyboardShortcuts,ItemListPageLength,DefaultSelectedFileType,SkipDefaultPreference,EnforceViewerCompatibility,AdvancedSearchPublicByDefault,NativeViewerCacheAhead,ChangeDocumentViewer,DocumentViewer,WindowsAccount,UserMustChangePasswordOnNextLogin,CanChangePassword,MaximumPasswordAgeInDays,TwoFactorMode,TwoFactorInfo
+User,User,User@User.com,,,Everyone;First Level Group,Internal,Relativity Template,TRUE,Enabled,TRUE,TRUE,TRUE,25,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,,FALSE,TRUE,0,None,
+dover,dover,User@User.com,,,Everyone;Level 1,Internal,Relativity Template,TRUE,Enabled,TRUE,TRUE,TRUE,25,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,,FALSE,TRUE,0,None,
+Test,PP,testpps@law.com,,,Everyone,Internal,Erik's Client,TRUE,Enabled,TRUE,TRUE,TRUE,25,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,,FALSE,TRUE,0,None,
+retester@user.com,retester@user.com,retester@user.com,,,Everyone;Level 1,Internal,Erik's Client,TRUE,Enabled,TRUE,TRUE,TRUE,25,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,,FALSE,TRUE,0,None,

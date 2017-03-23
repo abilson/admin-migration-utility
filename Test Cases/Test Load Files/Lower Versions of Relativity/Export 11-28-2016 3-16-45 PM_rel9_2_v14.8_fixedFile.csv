@@ -1,0 +1,9 @@
+FirstName,LastName,EmailAddress,WindowsAccount,Keywords,Notes,Groups,Type,Client,RelativityAccess,DocumentSkip,BetaUser,ChangeSettings,CanChangePassword,MaximumPasswordAgeInDays,KeyboardShortcuts,ItemListPageLength,DefaultSelectedFileType,SkipDefaultPreference,EnforceViewerCompatibility,AdvancedSearchPublicByDefault,NativeViewerCacheAhead,ChangeDocumentViewer,DocumentViewer,UserMustChangePasswordOnNextLogin,TwoFactorMode,TwoFactorInfo
+Jesse,Biehl,jbiehl@kcura.com,kcura\jbiehl,,,System Administrators;,Internal,Relativity Template,TRUE,Enabled,FALSE,TRUE,TRUE,0,TRUE,25,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,FALSE,None,
+Mary,Linderman,mlinderman@kcura.com,kcura\chogan,,,System Administrators;,Internal,Relativity Template,TRUE,Enabled,FALSE,TRUE,TRUE,0,TRUE,25,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,FALSE,None,
+Jane,Smith,jsmith@example.com,,,,System Administrators;,Internal,Relativity Template,TRUE,Enabled,FALSE,TRUE,TRUE,0,TRUE,25,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,FALSE,None,
+Sam,Gillmer,sgillmer@kcura.com,kcura\sgillmer,,,System Administrators;Level 3;,Internal,Relativity Template,TRUE,Enabled,FALSE,TRUE,TRUE,0,TRUE,25,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,FALSE,None,
+Chandra,Alimeti,calimeti@kcura.com,kcura\calimeti,,,System Administrators;,Internal,Relativity Template,TRUE,Enabled,FALSE,TRUE,TRUE,0,TRUE,200,Image,Normal,TRUE,TRUE,TRUE,FALSE,Default,FALSE,None,
+Natalya,Krecker,nkrecker@kcura.com,,,,System Administrators;,Internal,Relativity Template,TRUE,Enabled,FALSE,TRUE,TRUE,0,TRUE,200,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,FALSE,None,
+ray,ichihara,richihara@kcura.com,,,,System Administrators;,Internal,Relativity Template,TRUE,Enabled,FALSE,TRUE,TRUE,0,TRUE,200,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,FALSE,None,
+Justin,Smits,jsmits@kcura.com,kcura\jsmits,,,System Administrators;,Internal,Relativity Template,TRUE,Enabled,FALSE,TRUE,TRUE,0,TRUE,25,Viewer,Normal,TRUE,FALSE,TRUE,FALSE,Default,FALSE,None,

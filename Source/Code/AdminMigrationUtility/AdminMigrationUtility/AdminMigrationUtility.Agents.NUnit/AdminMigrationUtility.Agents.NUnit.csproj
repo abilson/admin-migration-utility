@@ -40,7 +40,7 @@
     </Reference>
     <Reference Include="kCura.Relativity.Client, Version=9.4.224.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Services API\Client\kCura.Relativity.Client.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\kCura Corporation\Relativity SDK\Services API\Client\kCura.Relativity.Client.dll</HintPath>
     </Reference>
     <Reference Include="Moq, Version=4.5.22.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Moq.4.5.22\lib\net45\Moq.dll</HintPath>
@@ -56,16 +56,16 @@
     </Reference>
     <Reference Include="Relativity.API, Version=9.2.190.9, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Relativity API\Lib\Relativity.API.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\kCura Corporation\Relativity SDK\Relativity API\Lib\Relativity.API.dll</HintPath>
     </Reference>
     <Reference Include="Relativity.Services.DataContracts">
-      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Services API\Client\Relativity.Services.DataContracts.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\kCura Corporation\Relativity SDK\Services API\Client\Relativity.Services.DataContracts.dll</HintPath>
     </Reference>
     <Reference Include="Relativity.Services.Interfaces">
-      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Services API\Client\Relativity.Services.Interfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\kCura Corporation\Relativity SDK\Services API\Client\Relativity.Services.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Relativity.Services.ServiceProxy">
-      <HintPath>..\..\..\..\..\..\..\lib\Relativity SDK\9.4.224.2\Services API\Client\Relativity.Services.ServiceProxy.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\kCura Corporation\Relativity SDK\Services API\Client\Relativity.Services.ServiceProxy.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <HintPath>..\..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
